@@ -22,8 +22,8 @@ class LINE extends Command {
 
 
     get myBot() {
-        const bot = ['u1cab5ef6299af4713353b9843479952d','u22d94aac4e1659eb6f375ffc7cb17a53'];
-        return bot; 
+        const bot = ['ubdf711c0432962685d9649316997d721','u85ee80cfb293599510d0c17ab25a5c98'];
+        return bot;
     }
 
     isAdminOrBot(param) {
@@ -135,7 +135,7 @@ class LINE extends Command {
         this.command(`kick ${payload}`, this.OnOff.bind(this));
         this.command(`cancel ${payload}`, this.OnOff.bind(this));
         this.command(`qrp ${payload}`, this.OnOff.bind(this));
-        this.command(`.kickall ${payload}`,this.kickAll.bind(this));
+        this.command(`.hi ${payload}`,this.kickAll.bind(this));
         this.command(`.cancelall ${payload}`, this.cancelMember.bind(this));
         this.command(`.set`,this.setReader.bind(this));
         this.command(`.recheck`,this.rechecks.bind(this));
@@ -147,7 +147,7 @@ class LINE extends Command {
         this.command(`.joinqr ${payload}`,this.joinQr.bind(this));
         this.command(`.spam ${payload}`,this.spamGroup.bind(this));
         this.command(`.creator`,this.creator.bind(this));
-
+        this.command(`invite`,this.invite.bind(this));
         this.command(`pap ${payload}`,this.searchLocalImage.bind(this));
         this.command(`.upload ${payload}`,this.prepareUpload.bind(this));
         this.command(`vn ${payload}`,this.vn.bind(this));

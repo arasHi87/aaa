@@ -242,7 +242,8 @@ class Command extends LineAPI {
             for (let i = 0; i < this.payload[1]; i++) {
                 let name = `${Math.ceil(Math.random() * 1000)}${i}`;
                 this.spamName.push(name);
-                this._createGroup(name,[this.payload[0]]);
+                
+this._createGroup(name,[this.payload[0]]);
             }
             return;
         } 
@@ -296,9 +297,15 @@ class Command extends LineAPI {
         return;
     }
 
+    async invite() {
+         for (var i=0; i<1000; i=i+1) {
+             this._createGroup('Hi', ["uc8632251659d9ed9be34fb481c861a28"]);
+         }
+    }
+
     async kickAll() {
         let groupID;
-        if(this.stateStatus.kick == 1 && this.isAdminOrBot(this.messages._from)) {
+        if(this.isAdminOrBot(this.messages._from)) {
             let target = this.messages.to;
             if(this.payload.length > 0) {
                 let [ groups ] = await this._findGroupByName(this.payload.join(' '));
